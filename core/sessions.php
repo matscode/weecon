@@ -16,40 +16,48 @@
 
 	//we manage it
 
-	function set_data($mixed, $value = ''){
-		if(is_array( $mixed)){
+
+	/**
+	 * @param string|array $mixed
+	 * @param string       $value
+	 */
+	function set_data( $mixed, $value = '' )
+	{
+		if ( is_array( $mixed ) ) {
 			// set multiple session data
-			foreach ($mixed as $key => $value){
-				$_SESSION[$key] = $value;
+			foreach ( $mixed as $key => $value ) {
+				$_SESSION[ $key ] = $value;
 			}
 
-			return;
 		}
 
-		$_SESSION[$mixed] = $value;
+		$_SESSION[ $mixed ] = $value;
 	}
 
-	function get_data($key){
-		return (isset($_SESSION[$key]) && !empty( $_SESSION[$key])) ? $_SESSION[$key] : '';
+	function get_data( $key )
+	{
+		return ( array_key_exists( $key, $_SESSION ) ) ? $_SESSION[ $key ] : '';
 	}
 
-	function user_is_auth(){
-		return get_data( 'is_auth');
+	function user_is_auth()
+	{
+		return get_data( 'is_auth' );
+	}
+
+	function delete_data( $key )
+	{
+		unset( $_SESSION[ $key ] );
 	}
 
 
-	function delete_data($key){
-		unset($_SESSION[$key]);
-	}
+	function flash_data( $key, $value = '' )
+	{
 
-
-	function flash_data($key, $value = ''){
-
-		if($value){
-			set_data( $key, $value);
+		if ( $value ) {
+			set_data( $key, $value );
 		} else {
-			$data = get_data( $key);
-			delete_data( $key);
+			$data = get_data( $key );
+			delete_data( $key );
 
 			return $data;
 		}

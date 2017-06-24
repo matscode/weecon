@@ -3,10 +3,9 @@
 
 <?php
 	// is user logged in
-	if(user_is_auth()){
-		redirect( 'dashboard');
+	if ( user_is_auth() ) {
+		redirect( 'dashboard' );
 	}
-
 
 	$username = $passwordPlain = null;
 
@@ -53,6 +52,8 @@
 	}
 
 	$errorMsg = join( '<br>', $errorMsgs );
+
+	$var = [];
 
 ?>
 
