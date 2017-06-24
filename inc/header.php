@@ -15,7 +15,8 @@
 ?>
 <html>
 	<head>
-		<title>WeeCon</title>
+		<title>WeeConnect</title>
+		<meta name="author" content="Michael Akanji">
 		<link rel="stylesheet" href="assets/css/weecon.css">
 	</head>
 	<body>
