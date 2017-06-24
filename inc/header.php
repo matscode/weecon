@@ -17,7 +17,7 @@
 	<head>
 		<title>WeeConnect</title>
 		<meta name="author" content="Michael Akanji">
-		<meta name="author" content="Just ikjdbd">
+		loving
 		<link rel="stylesheet" href="assets/css/weecon.css">
 	</head>
 	<body>
